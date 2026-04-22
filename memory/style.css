@@ -1,0 +1,313 @@
+* {
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #5b1761, #59246f);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 32px;
+    padding: 24px;
+    max-width: 95vw;
+    width: 900px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #daa3ff;
+    margin: 0 0 24px 0;
+    text-shadow: 2px 2px 0 #000000;
+    font-size: 1.5rem;
+}
+
+/* BAŞLANGIÇ EKRANI */
+.start-screen {
+    text-align: center;
+}
+
+.selection-card {
+    background: rgba(0,0,0,0.5);
+    border-radius: 24px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.selection-card h2 {
+    color: #daa3ff;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.option-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.option-btn {
+    background: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option-btn.active {
+    background: #8d5da3;
+    box-shadow: 0 0 10px #b71bff;
+}
+
+.option-btn:hover {
+    background: #8d5da3;
+    transform: scale(1.02);
+}
+
+.hint {
+    color: #ccc;
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+
+.start-btn {
+    background: #9f46c8;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 60px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 12px;
+}
+
+.start-btn:hover {
+    background: #b87dd3;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 3px 3px #c242fe
+}
+
+/* OYUN EKRANI */
+.game-screen {
+    animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Oyuncu kartları (2 kişilik) */
+.player-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.player-card {
+    background: rgba(0,0,0,0.6);
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    transition: 0.2s;
+    min-width: 130px;
+}
+
+
+.player-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+}
+
+.player-card.active-player {
+    background: #8d5da3;
+    box-shadow: 0 0 15px #bc2cff;
+    transform: scale(1.02);
+}
+
+.score {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Tek kişilik istatistikler */
+.single-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #000000aa;
+    padding: 10px 16px;
+    border-radius: 60px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.single-stats div {
+    background: #1e2f3c;
+    padding: 5px 14px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+}
+
+.double-stats{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #000000aa;
+    padding: 10px 16px;
+    border-radius: 60px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.double-stats div {
+    background: #1e2f3c;
+    padding: 5px 14px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+}
+
+/* Oyun tahtası - DOĞRUDAN GÖRÜNÜR, KAYDIRMA YOK */
+.game-board {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Kart stilleri - boyutlar dinamik olarak JS'den ayarlanacak */
+.card {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(145deg, #8d5da3, #501b69);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+.card:hover{
+    background: linear-gradient(145deg, #bb6ccb, #501b69);
+    transform: scale(1.06);
+    box-shadow: 3px 3px 0 #ae47c3;
+}
+
+.card:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0 #5c4567;
+}
+
+.card.flipped, .card.matched {
+    background: #b38cc5;
+    transform: translateY(2px);
+    box-shadow: 2px 2px  #845699;
+}
+
+.card.matched {
+    background: #b38cc5;
+    opacity: 0.7;
+    cursor: default;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.reset-btn, .back-btn {
+    border: none;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.reset-btn {
+    background: #6b2583;
+}
+
+.reset-btn:hover {
+    background: #a750c4;
+}
+
+.back-btn {
+    background: #6b2583;
+}
+
+.back-btn:hover {
+    background: #a750c4;
+}
+
+.win-message {
+    text-align: center;
+    background: gold;
+    color: #2c3e50;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0% { transform: scale(0.8); opacity: 0; }
+    80% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive - mobil için küçültme */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    .player-card {
+        min-width: 100px;
+        padding: 6px 12px;
+    }
+    .player-card h3 {
+        font-size: 0.8rem;
+    }
+}

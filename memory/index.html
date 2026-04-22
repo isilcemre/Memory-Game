@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Hafıza Oyunu - 1 veya 2 Kişilik</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 HAFIZA OYUNU 🃏</h1>
+        
+        <!-- BAŞLANGIÇ EKRANI -->
+        <div id="startScreen" class="start-screen">
+            <div class="selection-card">
+                <h2>👥 Oyuncu Sayısı</h2>
+                <div class="option-group">
+                    <button id="singlePlayerBtn" class="option-btn active">🧑 Tek Kişilik</button>
+                    <button id="twoPlayerBtn" class="option-btn">👥 İki Kişilik</button>
+                </div>
+            </div>
+
+            <div class="selection-card">
+                <h2>🎴 Kart Sayısı</h2>
+                <div class="option-group">
+                    <button data-cards="24" class="option-btn active">basit</button>
+                    <button data-cards="50" class="option-btn">orta</button>
+                    <button data-cards="98" class="option-btn">zor</button>
+                </div>
+            </div>
+
+            <button id="startGameBtn" class="start-btn">🎮 OYUNU BAŞLAT</button>
+        </div>
+
+        <!-- OYUN EKRANI (başta gizli) -->
+        <div id="gameScreen" class="game-screen hidden">
+            <!-- Oyuncu bilgileri (2 kişilikte gösterilir) -->
+            <div id="playerInfo" class="player-info hidden">
+                <div id="player1Info" class="player-card active-player">
+                    <h3>👤 Oyuncu 1</h3>
+                    <div class="score">Puan: <span id="player1Score">0</span></div>
+                </div>
+                <div id="player2Info" class="player-card">
+                    <h3>👤 Oyuncu 2</h3>
+                    <div class="score">Puan: <span id="player2Score">0</span></div>
+                </div>
+            </div>
+
+            <!-- Tek kişilik istatistikler -->
+            <div id="singleStats" class="single-stats hidden">
+                <div>📊 Hamle: <span id="moveCount">0</span></div>
+                <div>⭐ Puan: <span id="singleScore">0</span></div>
+                <div>⏱️ Süre: <span id="timer">0</span> sn</div>
+            </div>
+
+            <!-- İki kişilik istatistikler (SADECE SÜRE) -->
+            <div id="doubleStats" class="double-stats hidden">
+                <div>⏱️ Süre: <span id="doubleTimer">0</span> sn</div>
+            </div>
+
+            <!-- Oyun tahtası -->
+            <div id="gameBoardContainer" class="game-board-container">
+                <div id="gameBoard" class="game-board"></div>
+            </div>
+
+            <!-- Kontrol butonları -->
+            <div class="controls">
+                <button id="resetGameBtn" class="reset-btn">🔄 Yeni Oyun</button>
+                <button id="backToMenuBtn" class="back-btn">🏠 Ana Menü</button>
+            </div>
+
+            <!-- Kazanma mesajı -->
+            <div id="winMessage" class="win-message hidden"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
