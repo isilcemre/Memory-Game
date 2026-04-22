@@ -17,7 +17,7 @@ Bu proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiş, tarayıcı taba
 ## Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyin:
 
 1. Bu depoyu klonlayın:
-   git clone [https://github.com/kullaniciadi/proje-adi.git](https://github.com/kullaniciadi/proje-adi.git)
+   https://github.com/isilcemre/Memory-Game.git)
 2. Proje klasörüne gidin.
 3. index.html dosyasını herhangi bir modern web tarayıcısında açın.
 
