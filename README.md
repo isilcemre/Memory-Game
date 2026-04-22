@@ -14,14 +14,14 @@ Bu proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiş, tarayıcı taba
 - ** Görsel Efektler:** Oyun sonunda `canvas-confetti` kütüphanesi ile kutlama efekti.
 - ** Responsive Tasarım:** Mobil cihazlar ve farklı ekran boyutlarıyla tam uyumlu.
 
-##Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyin:
+## Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyin:
 
 1. Bu depoyu klonlayın:
    git clone [https://github.com/kullaniciadi/proje-adi.git](https://github.com/kullaniciadi/proje-adi.git)
 2. Proje klasörüne gidin.
 3. index.html dosyasını herhangi bir modern web tarayıcısında açın.
 
-##Kullanılan Teknolojiler:
+## Kullanılan Teknolojiler:
 - HTML5: Yapısal iskelet.
 - CSS3: Flexbox, Grid Layout ve modern cam (glassmorphism) tasarımı.
 - JavaScript (ES6+): Oyun mantığı, zamanlayıcı ve DOM yönetimi.
